@@ -1,0 +1,102 @@
+<odoo>
+    <!-- Carpetcall App Menu -->
+    <menuitem id="menu_carpetcall" name="carpetCALL" />
+
+    <!-- Action to open the Book list -->
+    <record id="action_carpetcall_carpet" model="ir.actions.act_window">
+        <field name="name">Carpet</field>
+        <field name="res_model">carpetcall.book</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_carpetcall_timber" model="ir.actions.act_window">
+        <field name="name">Timber</field>
+        <field name="res_model">carpetcall.book</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_carpetcall_vinyl" model="ir.actions.act_window">
+        <field name="name">Vinyl</field>
+        <field name="res_model">carpetcall.book</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <record id="action_carpetcall_underlay" model="ir.actions.act_window">
+        <field name="name">Underlay</field>
+        <field name="res_model">carpetcall.book</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_carpetcall_underlay1" model="ir.actions.act_window">
+        <field name="name">Underlay_test1</field>
+        <field name="res_model">carpetcall.book</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_carpetcall_underlay2" model="ir.actions.act_window">
+        <field name="name">Underlay_test2</field>
+        <field name="res_model">carpetcall_franchise.testsql</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <record id="action_carpetcall_underlay3" model="ir.actions.act_window">
+        <field name="name">Underlay_test3</field>
+        <field name="res_model">carpetcall_franchise.partner_product</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="action_carpetcall_underlay4">
+            <field name="name">Product Partner Relation</field>
+            <field name="res_model">carpetcall_franchise.partner_product</field>
+            <field name="view_mode">tree</field>
+    </record>
+
+
+<!--    <menuitem name="Partner" id="partner_product_menu_root" parent="stock.menu_warehouse_report" />-->
+<!--    <menuitem name="Partner Product Sale" id="menu_carpetcall_underlay4" parent="menu_carpetcall_underlay" action="partner_product_action_window"/>-->
+
+
+<!--    <record id="action_carpetcall_accessories" model="ir.actions.act_window">-->
+<!--        <field name="name">Accessories</field>-->
+<!--        <field name="res_model">record.restricted</field>-->
+<!--        <field name="view_mode">form</field>-->
+<!--    </record>-->
+
+
+
+    <!-- Menu item to open the Book list -->
+    <menuitem id="menu_carpetcall_carpet" name="Carpet" parent="menu_carpetcall" action="action_carpetcall_carpet"/>
+    <menuitem id="menu_carpetcall_timber" name="Timber" parent="menu_carpetcall" action="action_carpetcall_timber"/>
+    <menuitem id="menu_carpetcall_vinyl" name="Vinyl" parent="menu_carpetcall" action="action_carpetcall_vinyl"/>
+    <menuitem id="menu_carpetcall_underlay" name="Underlay" parent="menu_carpetcall" action="action_carpetcall_underlay"/>
+
+    <menuitem id="menu_carpetcall_underlay1" name="Underlay1" parent="menu_carpetcall_underlay" action="action_carpetcall_underlay1"/>
+    <menuitem id="menu_carpetcall_underlay2" name="Underlay2" parent="menu_carpetcall_underlay" action="action_carpetcall_underlay2"/>
+    <menuitem id="menu_carpetcall_underlay3" name="Underlay3" parent="menu_carpetcall_underlay" action="action_carpetcall_underlay3"/>
+
+
+
+<!--    <menuitem id="menu_carpetcall_accessories" name="Accessories" parent="menu_carpetcall" action="action_carpetcall_accessories"/>-->
+
+</odoo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

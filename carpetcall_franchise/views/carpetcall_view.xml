@@ -1,0 +1,165 @@
+<odoo>
+
+    <record id="view_from_carpetcall" model="ir.ui.view">
+        <field name="name">CarpetCALL Form</field>
+        <field name="model">carpetcall.book</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <button name="button_check_isbn" type="object" string="Check ISBN" />
+                </header>
+
+                <sheet>
+                    <group name="group_top">
+
+                        <group name="group_left">
+                            <field name="name" />
+                            <field name="sku" />
+                            <field name="fibre" />
+                            <field name="colour" />
+                            <field name="stock" />
+                            <field name="roll_type" />
+                            <field name="author_ids" widget="many2many_tags" />
+                            <field name="build_id" />
+                            <field name="builder_name" />
+                            <field name="builder_phone" />
+                            <field name="builder_address" />
+                            <field name="date_published"/>
+                            <field name="publisher_id"/>
+                            <field name="function_info" />
+                            <field name="address_info" />
+                            <field name="tel_info" />
+                            <field name="parking_zone" />
+                            <field name="two_wheels" />
+                            <field name="four_wheels" />
+<!--                            <field name="parterid" />-->
+<!--                            <field name="company_id" />-->
+<!--                            <group>-->
+                                <field name="company_id" groups="base.group_multi_company"/>
+                                <field name="user_id"/>
+                                <field name="company_details" />
+<!--                            </group>-->
+
+<!--                            <field name="company_id" string="lambda self: self.env.user"/>-->
+<!--!&#45;&#45;                            <field name="company_id_s" />&ndash;&gt;-->
+                        </group>
+
+                        <group name="group right">
+                            <field name="retail_price" />
+                            <field name="roll_price" />
+                            <field name="floor_cost" />
+                            <field name="roll_qty" />
+                            <field name="order_qty" />
+                            <field name="free_qty" />
+                            <field name="isbn" />
+                            <field name="active" />
+                            <field name="image" widget="image" />
+                            <field name="comment" />
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+
+        </field>
+    </record>
+
+
+<!--    <record model="ir.ui.view" id="record_form_view">-->
+<!--        <field name="name">record.restricted.form</field>-->
+<!--        <field name="model">record.restricted</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <form>-->
+<!--                <sheet>-->
+<!--                    <group>-->
+<!--                        <group>-->
+<!--                            <field name="company_id" groups="base.group_multi_company"/>-->
+<!--                            <field name="other_record_id"/>-->
+<!--                        </group>-->
+<!--                    </group>-->
+<!--                </sheet>-->
+<!--            </form>-->
+<!--        </field>-->
+<!--    </record>-->
+
+
+
+
+
+    <record id="view_tree_carpetcall" model="ir.ui.view">
+        <field name="name">CarpetCALL List</field>
+        <field name="model">carpetcall.book</field>
+<!--        <field name="groups_id">carpetcall_franchise.carpetcall_group_manager</field>-->
+<!--        <field name="priority">3</field>-->
+        <field name="arch" type="xml">
+<!--            <tree decoration-info="state == 'draft'" decoration-danger="state == 'help_needed'" decoration-bf="state='busy'">-->
+            <tree>
+                <field name="name" />
+                <field name="sku" string="tets12" invisible="False"/>
+                <field name="fibre" />
+                <field name="colour" />
+                <field name="stock" />
+                <field name="roll_type" />
+                <field name="retail_price" groups="carpetcall_franchise.carpetcall_group_manager"/>
+                <field name="roll_price" widget="handle"/>
+                <field name="floor_cost" string="The Floor_Cost" widget="handle"/>
+                <field name="roll_qty" string="The Stock QTY" widget="progressbar" invisible="context.get('set_visible', False)"/>
+                <field name="order_qty" />
+                <field name="free_qty" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_search_carpetcall" model="ir.ui.view">
+        <field name="name">Carpetcall Filters</field>
+        <field name="model">carpetcall.book</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="publisher_id" />
+                <field name="stock" />
+                <field name="retail_price" />
+                <field name="roll_price" />
+                <field name="floor_cost" />
+                <field name="roll_qty" />
+                <filter name="filter_inactive" string="Inactive" domain="[('active','=',True)]" />
+                <filter name="filter_active" string="Active" domain="[('active','=',False)]" />
+                <filter name="stock" string="Stock QLD" domain="[('stock', '=', 'QLD')]" />
+                <filter name="stock" string="Stock VIC" domain="[('stock', '=', 'VIC')]" />
+            </search>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="carpetcall_franchise.list">
+            <field name="name">partner_product list</field>
+            <field name="model">carpetcall_franchise.partner_product</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="product_name"/>
+                    <field name="total_quantity_sold"/>
+                </tree>
+            </field>
+    </record>
+
+
+    <record id="carpetcall_testsql_view_tree" model="ir.ui.view">
+        <field name="name">carpetcall.testsql.view.tree</field>
+        <field name="model">carpetcall_franchise.testsql</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="sale_number" />
+<!--                <field name="company_id" />-->
+<!--                <field name="company_details" />-->
+
+                <field name="customer_name" />
+<!--                <field name="order_date" />-->
+<!--                <field name="amount" />-->
+<!--                <field name="currency_id" invisible="1" />-->
+            </tree>
+        </field>
+    </record>
+
+
+
+
+</odoo>
